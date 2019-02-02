@@ -4,7 +4,7 @@ let miInit = { method: 'GET',
     headers: misCabeceras,
 };
 
-fetch('http://localhost:80/php-restful/v1/movies',miInit)
+fetch('http://jasp402.com/_api_movie/v1/movies',miInit)
     .then(function(response) {
         return response.json();
     })
