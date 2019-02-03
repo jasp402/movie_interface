@@ -1,197 +1,198 @@
-.list {
-	margin: 0 auto;
-	max-width: 50em;
-	padding: 0 1em;
+@font-face {
+	font-family: 'linecons';
+	src:url('../fonts/linecons/linecons.eot');
+	src:url('../fonts/linecons/linecons.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/linecons/linecons.woff') format('woff'),
+	url('../fonts/linecons/linecons.ttf') format('truetype'),
+	url('../fonts/linecons/linecons.svg#linecons') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
-.list__item {
-	position: relative;
-	margin: 0.25em;
-	height: 1.75em;
-	border-radius: 5px;
-	background: #66727c;
-	list-style-type: none;
-	text-align: left;
-	font-size: 2em;
-	pointer-events: none;
-}
-
-.list__item:active {
-	background: transparent
-}
-
-.drag-me {
-	top: 1em;
-	left: 1em;
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 3px;
-	background: #505b65;
-	color: #6dcde9;
-	text-align: center;
-	font-size: 0.5em;
-	line-height: 1.5;
-	pointer-events: auto;
-}
-
-.drag-me::before {
-	position: absolute;
-	top: 0;
-	left: 110%;
-	width: 500%;
-	height: 100%;
-	border-radius: 3px;
-	background: #66727c;
-	content: '';
-	pointer-events: none;
-}
-
-.drag-me:hover {
-	cursor: move;
-	cursor: -webkit-grab;
-	cursor: grab;
-}
-
-.drag-me:active {
-	cursor: -webkit-grabbing;
-	cursor: grabbing;
-}
-
-.is-active {
-	z-index: 100
-}
-
-.is-dropped {
-	opacity: 0
-}
-
-.is-complete {
-	opacity: 1;
-	-webkit-transition: opacity 0.3s !important;
-	transition: opacity 0.3s !important;
-}
-
-.animate {
-	-webkit-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-}
-
-.drop-area {
-	position: fixed;
-	top: 100%;
-	left: 0;
-	z-index: 99;
-	width: 100%;
-	height: 160px;
-	text-align: center;
-	font-size: 3em;
-	pointer-events: none;
-}
-
-.drop-area__item {
-	position: relative;
+.icon:before {
+	font-family: 'linecons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	display: inline-block;
-	padding: 0 0.5em;
-	max-width: calc(20% - 0.3em);
-	border-radius: 10px;
-	color: #2fa0ec;
-	line-height: 120px;
-	-webkit-transition: -webkit-transform 0.3s, color 0.3s;
-	transition: transform 0.3s, color 0.3s;
+	margin-right: 0.6em;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-female:before {
+	content: "\f182";
+}
+.icon-male:before {
+	content: "\f183";
+}
+.icon-arrow-left:before {
+	content: "\e032";
+}
+.icon-arrow-left-2:before {
+	content: "\e034";
+}
+.icon-arrow-left-3:before {
+	content: "\e036";
+}
+.icon-arrow-left-4:before {
+	content: "\e038";
+}
+.icon-arrow-right:before {
+	content: "\e035";
+}
+.icon-arrow-right-2:before {
+	content: "\e037";
+}
+.icon-arrow-right-3:before {
+	content: "\e039";
+}
+.icon-arrow-right-4:before {
+	content: "\e033";
 }
 
-.drop-area.show .drop-area__item.highlight {
-	color: #fff;
-	-webkit-transition: none;
-	transition: none;
+.icon-phone:before {
+	content: "\e000";
 }
-
-.drop-area__item::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -1px 0 0 -1px;
-	width: 2px;
-	height: 2px;
-	border-radius: 50%;
-	box-shadow: 0 0 1px 0 rgba(255,255,255,0.3);
-	content: '';
+.icon-news:before {
+	content: "\e001";
 }
-
-.drop-feedback.drop-area__item::before {
-	-webkit-animation: highlight 0.3s forwards;
-	animation: highlight 0.3s forwards;
+.icon-photo:before {
+	content: "\e002";
 }
-/* Effect as seen on http://palettab.com/ by Tim Holman & Claudio Guglieri */
-
-@-webkit-keyframes highlight {
-	to {
-		box-shadow: 0 0 50px 100px rgba(255,255,255,0.3);
-		opacity: 0;
-	}
+.icon-shop:before {
+	content: "\e003";
 }
-
-@keyframes highlight {
-	to {
-		box-shadow: 0 0 50px 100px rgba(255,255,255,0.3);
-		opacity: 0;
-	}
+.icon-wallet:before {
+	content: "\e004";
 }
-
-.drop-area.show .drop-area__item {
-	-webkit-transform: translate3d(0,-140px,0);
-	transform: translate3d(0,-140px,0);
-	pointer-events: auto;
+.icon-t-shirt:before {
+	content: "\e005";
 }
-
-.drop-area.show .drop-area__item:first-child,
-.drop-area.show .drop-area__item:last-child {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
+.icon-heart:before {
+	content: "\e006";
 }
-
-.drop-area.show .drop-area__item:nth-child(2),
-.drop-area.show .drop-area__item:nth-child(4) {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
+.icon-cloud:before {
+	content: "\e007";
 }
-
-.drop-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 79%);
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
-	pointer-events: none;
+.icon-display:before {
+	content: "\e008";
 }
-
-.drop-area.show + .drop-overlay {
-	opacity: 1
+.icon-diamond:before {
+	content: "\e009";
 }
-
-.helper {
-	position: absolute !important;
-	margin: 0;
+.icon-banknote:before {
+	content: "\e00a";
 }
-
-@media screen and (max-width: 50em) {
-	.list__item {
-		font-size: 1.5em;
-	}
-	.drop-area {
-		font-size: 2em;
-	}
+.icon-data:before {
+	content: "\e00b";
 }
-
-@media screen and (max-width: 25.5em) {
-	.grid {
-		padding: 0 2em;
-	}
-	.drop-area {
-		font-size: 1.5em;
-	}
+.icon-music:before {
+	content: "\e00c";
+}
+.icon-location:before {
+	content: "\e00d";
+}
+.icon-star:before {
+	content: "\e00e";
+}
+.icon-tv:before {
+	content: "\e00f";
+}
+.icon-eye:before {
+	content: "\e010";
+}
+.icon-megaphone:before {
+	content: "\e011";
+}
+.icon-study:before {
+	content: "\e012";
+}
+.icon-bubble:before {
+	content: "\e013";
+}
+.icon-sound:before {
+	content: "\e014";
+}
+.icon-video:before {
+	content: "\e015";
+}
+.icon-stack:before {
+	content: "\e016";
+}
+.icon-lab:before {
+	content: "\e017";
+}
+.icon-food:before {
+	content: "\e018";
+}
+.icon-cup:before {
+	content: "\e019";
+}
+.icon-trash:before {
+	content: "\e01a";
+}
+.icon-user:before {
+	content: "\e01b";
+}
+.icon-key:before {
+	content: "\e01c";
+}
+.icon-fire:before {
+	content: "\e01d";
+}
+.icon-clip:before {
+	content: "\e01e";
+}
+.icon-mail:before {
+	content: "\e01f";
+}
+.icon-search:before {
+	content: "\e020";
+}
+.icon-settings:before {
+	content: "\e021";
+}
+.icon-like:before {
+	content: "\e022";
+}
+.icon-calendar:before {
+	content: "\e023";
+}
+.icon-camera:before {
+	content: "\e024";
+}
+.icon-tag:before {
+	content: "\e025";
+}
+.icon-note:before {
+	content: "\e026";
+}
+.icon-clock:before {
+	content: "\e027";
+}
+.icon-lock:before {
+	content: "\e028";
+}
+.icon-vynil:before {
+	content: "\e029";
+}
+.icon-truck:before {
+	content: "\e02a";
+}
+.icon-paperplane:before {
+	content: "\e02b";
+}
+.icon-bulb:before {
+	content: "\e02c";
+}
+.icon-pen:before {
+	content: "\e02d";
+}
+.icon-params:before {
+	content: "\e02e";
+}
+.icon-world:before {
+	content: "\e02f";
 }
